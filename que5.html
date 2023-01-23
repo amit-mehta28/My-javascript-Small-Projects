@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset=utf-8 />
+<title>Remove dropdown item</title>
+<style>
+    .center{
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+    <div class="center">
+        <select name="Names" id="dropdown">
+            <option value="Amit">Amit Mehta </option>
+            <option value="TAlu">Sonu Mehta</option>
+            <option value="Kalu">Ajit Mehta</option>
+            <option value="Bhalu">Gaurav Mehta</option>
+            <option value="Aalu">Sumit Mehta</option>
+        </select>
+        <button onclick="remove_name()">Select and Remove</button>
+    </div>
+    <script>
+       function remove_name(){
+            let removeName=document.querySelector("#dropdown");
+            removeName.remove(removeName.selectedIndex);
+        }
+    </script>
+</body>
+</html>

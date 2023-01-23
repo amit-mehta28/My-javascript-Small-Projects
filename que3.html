@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set the background color of a paragraph</title>
+</head>
+<body>
+    <input type="button" value="Set the background color of a paragraph" onclick="setBg()">
+    <p class="aalu">Hey Man, Please Change my color to click on the button !</p>
+    <p class="bhalu">Hey Man, Please Change my color to click on the button ! but please set my background Color Yellow</p>
+
+
+    <script>
+        function setBg(){
+            let myp1=document.querySelector(".aalu");
+            myp1.style.backgroundColor="red";
+            let myp2 = document.querySelector(".bhalu");
+            myp2.style.backgroundColor="yellow";            
+        }
+    </script>
+</body>
+</html>

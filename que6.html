@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of sphere !</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            place-content: center;
+            height: 100vh   ;
+        }
+        .sphere {
+            border: 1px solid;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        input {
+            display: block;
+        }
+
+        p,
+        span,
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="sphere">
+        <p>Input Radius value and get the volume of sphere !</p>
+        <span> Enter Radius</span>
+        <input type="text" class="in_radius" value="">
+        <span> Volume:</span>
+        <input type="text" value="0.0000" class="in_value">
+        <!-- <input type="submit" class="calculate"> -->
+        <button class="calculate" onclick="calculateVolumeSphere()">submit</button>
+
+    </form>
+    <script>
+        function calculateVolumeSphere() {
+           let volume;
+           let radius=document.querySelector(".in_radius").value;
+           radius=Math.abs(radius);
+           volume=(4/3)*Math.PI* Math.pow(radius, 3);
+           document.querySelector(".in_value").value = volume; 
+           return false;
+        }
+        window.onload = document.querySelector('.sphere').onsubmit = calculateVolumeSphere;
+    </script>
+</body>
+
+</html>
