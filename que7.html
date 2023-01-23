@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Triangle</title>
+</head>
+<body>
+    <form class="myForm">
+    <p>Area of Triangle</p>
+    <label for="">Enter Base of Triangle</label>
+    <input type="text" name="base" value="" class="base">
+
+    <label for="">Enter height of Triangle</label>
+    <input type="text" name="base" value="" class="height">
+
+    <p>Area of Triangle is: <span class="ans"></span></p>
+    <button onclick="areaTriangle()">Calculate</button>
+</form>
+
+<script>
+    function areaTriangle(){
+        let base = document.querySelector(".base").value;
+        let height = document.querySelector(".height").value;
+        let areaOfTri = (1/2)*base*height;
+       document.querySelector(".ans").innerHTML= areaOfTri;
+       return false;
+    }
+    window.onload = document.querySelector('.myForm').onsubmit = areaTriangle;
+
+</script>
+</body>
+</html>
