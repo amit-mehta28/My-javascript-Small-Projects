@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>To Do List !</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: blueviolet;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+
+        }
+
+        .task_box {
+            background-color: white;
+            padding: 50px 30px;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+                0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .new_task {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input {
+            max-width: 250px;
+            width: 100%;
+            font-size: 24px;
+            outline-color: blueviolet;
+            background: transparent;
+            border: none;
+            border: 1px solid blueviolet;
+        }
+
+        ::placeholder {
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+        .add_btn {
+            padding: 10px 30px;
+            background-color: rgb(153, 85, 218);
+            border: none;
+            cursor: pointer;
+        }
+
+        .tasks {
+            padding: 10px 0;
+        }
+
+        .task_name {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid blueviolet;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .delete_btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div class="task_box">
+            <h3 class="title">TO-DO LIST !</h3>
+            <div class="new_task">
+                <input type="text" name="" id="" value="" class="input" placeholder="Abe Kuchh Toh Likh...">
+                <button class="add_btn" onclick="todo()">Add</button>
+            </div>
+            <div class="tasks">
+
+            </div>
+    </section>
+    <script>
+        let todo = () => {
+            let newTask = document.querySelector(".input").value;
+            if (newTask == '') {
+                alert("Please Enter Task !");
+            }
+            else {
+                document.querySelector(".tasks").innerHTML
+                    += `
+                    <div class="task" >
+                        <span class="task_name">
+                            ${document.querySelector("input").value}
+                             <img src="remove_icon.png" alt="Remove Icon" class="delete_btn">
+                        </span>    
+                </div>
+                `;
+                var deleteBtn = document.querySelectorAll(".delete_btn");
+                console.log(deleteBtn);
+                for (let i = 0; i < deleteBtn.length; i++) {
+                    deleteBtn[i].onclick = function () {
+                        this.parentNode.remove();
+                    };
+                }
+                 document.querySelector(".input").value="";
+                 document.querySelector(".input").placeholder ="Aur Likh";
+            }
+        }
+    </script>
+</body>
+
+</html>
