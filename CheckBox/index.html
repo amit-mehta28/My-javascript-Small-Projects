@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Checkbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .checkbox {
+            padding: 10px 40px;
+            background: blueviolet;
+            display: grid;
+            grid-template-columns: 1fr 20px;
+            gap: 20px;
+            border-radius: 10px;
+        }
+        .chbox_label{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="checkbox">
+        <label for="chkbox" class="chbox_label">Amit Mehta</label>
+        <input type="checkbox" id="chkbox" class="checkbox_btn">
+
+    </div>
+</body>
+
+</html>
