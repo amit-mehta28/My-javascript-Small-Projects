@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .accordion_item {
+            border-bottom: 1px solid black;
+
+        }
+
+        .accordion_heading {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .accordion_ans {
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            transition: 0.4s;
+        }
+
+        .accordion_heading.active+.accordion_ans {
+            margin-bottom: 20px;
+        }
+
+        .plus_icon {
+            transition: 0.4s;
+        }
+
+        .accordion_heading.active .plus_icon {
+            transform: rotate(-135deg);
+            transition: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordion_item onclick=" toggleAccordion()">
+        <div class="accordion_heading">
+            <p class="accordion_title">What type of photos should I upload?</p>
+            <img src="plus.svg" alt="Plus Icon" class="plus_icon">
+        </div>
+        <p class="accordion_ans">Upload high-quality, clear photos that showcase your features and personality from
+            different angles and settings. This could include photos taken outdoors, in different lighting conditions,
+            and showing different expressions. Whether you're taking selfies or having someone else take photos, make
+            sure the images are in focus and have a resolution of at least 720p</p>
+    </div>
+    <script>
+        let faqTitle = document.querySelectorAll(".accordion_heading");
+        for (let i of faqTitle) {
+            i.addEventListener("click", () => {
+                i.classList.toggle("active");
+                let nextSibling = i.nextElementSibling;
+                let nextSiblingHeight = nextSibling.scrollHeight;
+                console.log(nextSibling);
+                if (i.classList.contains("active")) {
+                    nextSibling.setAttribute("style", `height:${nextSiblingHeight}px`);
+                } else {
+                    nextSibling.removeAttribute("style");
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
