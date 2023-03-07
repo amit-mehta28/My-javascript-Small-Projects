@@ -127,6 +127,16 @@
                 }
                  document.querySelector(".input").value="";
                  document.querySelector(".input").placeholder ="Aur Likh";
+
+
+                 let todolist = localStorage.getItem(".task");
+                 console.log(todolist);
+                 if(todoList == null){
+                    todoListObj =[];
+                 }
+                 else{
+                    todoListObj = JSON.parse(todolist );
+                 }
             }
         }
     </script>
