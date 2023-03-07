@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>File Uploader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: blueviolet;
+        }
+
+        .file_upload_box {
+            background-color: yellowgreen;
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 8px;
+            border-radius: 8px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .file_input {
+            display: none;
+        }
+
+        .file_text {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="file_upload_box">
+        <input type="file" id="file" accept="image/*" class="file_input">
+        <img src="upload.png" alt="Upload image" width="25px">
+        <label for="file" class="file_text">Choose a Image</label>
+    </div>
+</body>
+<script>
+    let changeBg = () => {
+        bgBody.style.backgroundColor = "";
+    }
+    let bgBody = document.querySelector("body");
+    let fileBtn = document.querySelector(".file_upload_box");
+    fileBtn.addEventListener("click", changeBg)
+
+</script>
+
+</html>
