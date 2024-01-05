@@ -1,0 +1,22 @@
+//scroll pe viewport meh koi element aaye toh uspe koi operation krne ke liye we can use IntersectionObserver
+
+
+// Create an intersection observer with a callback function
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // The target element is now in the viewport
+            console.log('Element is visible!');
+            // Load or perform actions related to the visible element
+        } else {
+            // The target element is not in the viewport
+            console.log('Element is not visible!');
+        }
+    });
+}, { threshold: 0.5 }); // Optional threshold parameter (from 0 to 1)
+
+// Specify the target element to observe
+const targetElement = document.querySelector('.target');
+
+// Start observing the target element
+observer.observe(targetElement);
